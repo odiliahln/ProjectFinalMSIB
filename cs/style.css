@@ -1,0 +1,354 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+:root {
+  /* color */
+  --bg: #54682f;
+  --white: #ffffff;
+  --btn: #abb897;
+  --black: #1d1d1d;
+  --body: #b6cbce;
+  --heading: #eef3db;
+  --base: #033f47;
+  --base2: #022a30;
+  --button: #e0f780;
+  --brand: #deff58;
+  --sidbar-width: 240px;
+
+  /*? font size */
+  --heading1: 56px;
+  --heading2: 48px;
+  --heading3: 36px;
+  --heading4: 24px;
+  --paragraph1: 20px;
+  --paragraph2: 18px;
+
+  /* font font-family */
+  --font-bai: "Bai Jamjuree";
+  --font-mons: "Montserrat";
+  --font-rob: "Roboto";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--base2);
+  color: var(--body);
+  overflow-x: hidden;
+  font-family: var(--font-mons);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+}
+
+img {
+  width: 100%;
+}
+
+.text-brand {
+  color: var(--brand);
+  font-weight: 700;
+  font-family: var(--font-bai);
+}
+
+/* Navbar1 */
+.navbar {
+  background-color: var(--base);
+}
+
+/* Navbar */
+@media (min-width: 992px) {
+  .navbar {
+    min-height: 100vh;
+    width: var(--sidbar-width);
+    background: linear-gradient(rgba(3, 63, 71, 0.8), rgba(3, 63, 71, 0.8)),
+      url(../assets/sidebar.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+  .nav-item a {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--btn) !important;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+
+  .nav-item a:hover {
+    color: var(--brand) !important;
+  }
+
+  .nav-link.active {
+    margin-top: 20px;
+    color: var(--btn) !important;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.4s ease;
+  }
+
+  .nav-link.active:hover {
+    color: var(--brand) !important;
+  }
+}
+
+/* Content Wrapper */
+#content-wrapper {
+  padding-left: var(--sidbar-width);
+}
+
+/* Hero */
+.position {
+  min-height: 100vh;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .heading {
+  font-family: var(--font-bai);
+  animation: typing 4s steps(40) infinite;
+} */
+.heading {
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  font-size: var(--heading4); /* Sesuaikan ukuran font */
+  border-right: 2px solid; /* Garis yang menandakan pengetikan */
+  animation: typing 4s steps(40) infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    border-right: 2px solid transparent;
+  }
+  100% {
+    width: 100%;
+    border-right: 2px solid transparent;
+  }
+}
+
+/* Hero Button */
+
+.btn-primary {
+  padding: 12px 20px;
+  background-color: var(--button) !important;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  color: var(--base) !important;
+  text-decoration: none;
+  outline: none;
+  font-family: var(--font-bai);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--brand) !important;
+  color: var(--black) !important;
+  border-color: var(--base);
+  border: none;
+  outline: none;
+}
+
+/* Link */
+.link-custom {
+  font-weight: 700;
+  position: relative;
+  text-decoration: none;
+  color: var(--body);
+  font-family: var(--font-bai);
+}
+
+.link-custom::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: var(--brand);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transition: all 0.4s;
+  transform-origin: left;
+}
+
+.link-custom:hover::after {
+  width: 100%;
+}
+
+.link-custom:active::after {
+  width: 100%;
+  transform: scaleX(0);
+}
+
+.link-custom:hover {
+  color: var(--brand);
+}
+
+.link-custom:active {
+  color: var(--brand);
+}
+
+/* Service */
+.head-service {
+  font-family: var(--font-bai);
+  font-weight: 700;
+}
+
+.text-service {
+  font-family: var(--font-bai);
+  font-weight: 700;
+  color: var(--brand);
+}
+
+/* Service */
+.bg-base {
+  background-color: var(--base);
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.shadow-effect {
+  transition: all 0.5s;
+}
+
+.shadow-effect:hover::after {
+  box-shadow: -6px 6px 0 0 8px;
+}
+
+/* galeri */
+#galeri img {
+  margin-bottom: 30px;
+  transform: translateY(5%);
+  transition: transform 0.5s ease-in-out;
+}
+
+#galeri img:hover {
+  transform: translateY(0);
+  transform: scale(1.1);
+}
+
+/* about */
+#about h3 {
+  color: var(--btn);
+  font-family: var(--font-rob);
+}
+
+#about h3:hover {
+  color: var(--brand);
+}
+
+#about h6 {
+  font-family: var(--font-rob);
+}
+
+#about .text-brand {
+  font-family: var(--font-bai);
+}
+
+/* blog */
+
+#blog {
+  padding: 40px 0;
+}
+
+#blog .card {
+  border: 1px solid var(--base2);
+  background-color: var(--base2);
+}
+
+#blog .card-buku img {
+  height: 200px;
+}
+
+#blog .card-buku .highlight {
+  font-size: 14px;
+  font-weight: bold;
+  color: #b1d08a;
+}
+
+#blog .card-buku .tanggal {
+  font-size: 11px;
+  margin-left: 7px;
+  color: lightslategray;
+}
+
+#blog .card-buku .card-title {
+  color: var(--brand);
+  font-size: 20px;
+  height: 60px;
+}
+
+#blog .card-buku .card-text {
+  font-size: 15px;
+  margin-top: 7px;
+  height: 100px;
+  opacity: 0.7;
+}
+
+#blog .card-buku .card-link {
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #b1d08a;
+  font-family: var(--font-rob);
+}
+/* contact */
+
+#contact {
+  padding: 100px 0;
+}
+
+#contact .judul {
+  color: #bbff33;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+#contact .text {
+  opacity: 0.5;
+  font-size: 14px;
+  margin-top: -5px;
+}
+
+#contact p {
+  margin-top: -8px;
+}
+
+#contact p a {
+  color: var(--btn);
+  opacity: 0.5;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+#contact .img-contact {
+  width: 120px;
+}
+
+#contact .form-control {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
